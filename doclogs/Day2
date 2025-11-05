@@ -65,7 +65,11 @@ Git and its basics commands
     - git merge targetBranch
 
 > tagging
+    -
+
 > log
+    - git log
+
 > replace local changes
 > tig - Text-mode interface for git
 
