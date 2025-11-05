@@ -1,0 +1,62 @@
+VCS foundation
+> What’s a version control system?
+    - Tool used to track, control and manage project versions
+
+> Distributed version control system?
+    - Has multiple repo
+    - Each user has their own repository
+    - No single point of failure
+
+> Centralized Version Control Systems
+    - All files and history are stored in a single central server
+    - Need to have continuous connection with the server to make changes
+    - Single point of failure
+
+> Why Git?
+    - For VCS
+
+> What’s a repository?
+    - Directory to store store files and their history
+
+Concept of SSH.
+> What is SSH
+    - Secure Shell(SSH) is a network protocol that tranfers data securely
+
+> How Does SSH Work
+    - Runs on top of TCP/IP
+    - Public key cryptography
+    - Authentication
+    - SSH port forwarding
+
+> Setting up SSH key with Gitlab
+
+Git and its basics commands
+> Installing Git
+    - sudo pacman -S git
+
+> git config
+    - $ git config --global user.name "John Doe"
+    - $ git config --global user
+
+> Initializing Git
+    - git init
+
+> checkout a repository
+    - git checkout fooBranch
+
+> add and commit
+    - git add .
+    - git commit -m "fooMessage"
+
+> Status
+    - git status
+
+> pushing changes
+    - git push origin fooBranch
+
+> branching
+    - git branch
+
+
+
+

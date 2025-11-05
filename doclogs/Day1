@@ -1,0 +1,250 @@
+Directories
+> pwd
+    - Give present working directory
+
+> cd
+    - Change Directory
+    - Move up directory tree: cd ..
+    - Chagen directory: cd /path/to/dir
+
+> Absolute
+    - It is full path to the required file/directory
+
+> Relative
+    - Path relative to the present directory
+    - Often indicated by "./"
+
+> Path Completion
+
+> ls
+    - ls: List Directory Contents
+    - ls -l : Long list format
+    - ls -a : List all the files including hidden files
+
+    - ls -lS --recursive: List files in long format, sorted by size, recursively
+
+    > ls -lt --reverse: List files in long format, sorted by time the file was modified and in reverse order
+
+
+> mkdir
+    - Used to make directory
+    - mkdir nameOfDirectory
+    - mkdir path/to/dir/dirName
+    - mkdir --parents path/to/{foo,bar}/{1,2,3}
+> rmdir
+    - Remove empty directory
+    - rmdir dirName
+    - rm * : remove parent directory that has empty directory
+
+Files
+> file
+    - Determine type of file
+    - file fileName l;adsfadsf
+
+> touch
+    - Create New file: touch fileName1.txt fileName2.txt
+    - Create Multiple Files with incresing number: touch foo{1..5}.txt
+    - Create Multiple Files with incresing alphabet: touch foo{a..b}.txt
+    - Set the file time to a specified value and don't create file if it doesn't exist:
+        touch --no-create -t YYYYMMDDHHMM.SS path/to/file1 path/to/file2 ...
+
+> rm
+    - Remove Specific Files: rm fileName1.txt fileName2.txt
+    - Remove directory and all its contents: rm -r dirName
+    - Force Flag: -f
+
+> cp
+    - Copy file and directory
+    - Copy file to another destination: cp path/to/sourceFile path1/to1/targetFile
+    - Copy file to another destination keeping file name: cp path/to/sourceFile path1/to1/
+
+> mv
+    - Move/rename file and directory
+    - Move file to non existing directory destination: cp path/to/sourceDir path1/to1/targetDir
+    - Move file to existing directory destination: cp path/to/sourceDir path1/to1/existingDir
+    - Move multiple directory to a single directory:
+        mv path/to/sourceDir path/to/sourceDir ... path/to/existingDir
+    - rename files/directory
+        mv path/to/FileName path/to/NewFileName
+        mv path/to/DirName path/to/NewDirName
+
+> rename
+
+Man
+> Linux man Intro
+> man -a
+> man -aw
+> man -f
+> man -k(apropos)
+> man whereis
+
+File Contents
+> head
+    - Give First 10 lines from the source file: head fooFile
+    - Give First {x} lines from the source file: head {x} fooFile
+    - Give First 10 lines from multiple source file: head fooFile barFile
+
+> tail
+    - Give Last {x} lines from the source file: tail {x} fooFile
+    - Give Last 10 lines from the source file: tail fooFile
+    - Give Last 10 lines from multiple source file: tail fooFile barFile
+
+> cat
+    - Prints content of the file: cat fooFile
+    - Prints content of the file with line number: cat --number fooFile
+    - Prints content of multiple files by concatinating: cat fooFile barFile
+
+> less
+    - Opens files with interactives
+    - Open file: less fooFile
+    - Go to top of File: G
+    - Go to bottom of File: g
+    - Search the file with: /{searchText}
+    - Open current file in text-editor(vi): v
+
+> more
+    - Open file with interactives(less than less): more fooFile
+    - Go to next page: <Space>
+    - Search the file with: /{searchText}
+
+> tac
+    - Opens file in reverse order: tac fooFile
+
+Filter or Finding Things
+> sed
+    - Used for filtering and transforming text
+    - Replace every occurance and print to stdout: cat | sed 's/foo/bar/g'
+    - Delete lines 1 to 5 of a file and back up the origin with .orig extension
+        sed --in-place=.orig '1,5d' path/to/file
+
+> grep
+    - Search for patter in a file: grep "pattern" fooFile
+    - Search for exact string, disable regex: grep "fixedString" fooFile
+    - Search for lines/text printing only matched text: grep --only-matching={pattern}
+    - Search for lines/text printing all lines except the matched pattern: grep --invert-match {pattern} fooFile
+
+> find
+    - Find files and directory under a directory
+    - Find any files with any extension: find -name '*.*'
+    - Find all directory under a directory: find type d ~/path/to/dir ~/path1/to1/dir1 -maxdepth 1
+
+> locate
+
+Linux Networking
+> curl
+    - Make http request
+    - Format: curl -X {method} -h "field-name: value" -d {requestBody} https://foo.com/v1/bar
+    - Download a file, saving the output under the filename indicated by the URL:
+        curl --remote-name https://example.com/filename.zip
+
+> wget
+
+> ping
+    - Sends ICMP echo request: ping {IP_address}
+
+xLinux netstat
+
+System Admin Command
+> kill
+    - Sends a signal to a process, usually related to stopping the process. All signals except for SIGKILL and SIGSTOP can be intercepted by the process to perform a clean exit.
+    - kill {processID}
+    - Signal the operating system to immediately terminate a program:
+        kill -9|KILL {processID}
+    - Signal the operating system to pause a program until a SIGCONT ("continue") signal is received:
+        kill -17|STOP {processID}
+
+> killall
+    - Sends kill signal to all the instance of the process by name: killall {processName}
+    - Ask before process termination: killall --interactive {processName}
+    - Force kill a process: killall KILL {processName}
+
+> pkill
+    - Kill all process that match the process name: pkill "{processName}"
+    - Force kill all matching processes: pkill -9 "{processName}"
+
+Xxkill
+
+wget command
+
+> ps
+    - Information about running processes
+    - List all running processes: ps aux
+    - ps --user $(id --user) f
+
+Users
+> Add User
+    - Create New User: sudo useradd {userName}
+
+> Delete User
+    - Remove a User: sudo userdel {userName}
+
+> Modify User Account
+    - Change User Name: sudo usermod --login {newUserName} {oldUserName}
+    - Lock an account: sudo usermod --lock username
+    - Unlock an account: sudo usermod --unlock username
+
+
+Linux File Security
+> Linux File OwnerShip
+    - File Ownership can be explored using ls -l command
+    ~/foo$ ls -l bar
+    -rw-r--r-- 1 zoo zoo 75 Nov  4 11:53 bar
+
+Linux Permission
+> chmod
+    - Change permission for a file/directory
+    - chmod {who}{operator}{permission} fileName/directoryName
+    Who: u (user/owner), g (group), o (others), a (all).
+    Operator: + (add), - (remove), = (set exact).
+    Permission: r (read), w (write), x (execute
+
+Linux Advance Permission
+    - Additional three different permissions: SUID, SGID, The Sticky Bit
+> SUID
+    - If SUID bit is set, then the file will be executed with the privilages of the owner
+    - Only owner of the file or root user can set SUID to 1
+    - SUID can be set using the u+s command: chmod u+s fileName
+        eg:
+        ~ $ ls -l per
+        -rw-r--r-- 1 gafoli gafoli 21 Nov  5 10:14 per
+
+        ~ $ chmod u+s per
+
+        ~ $ ls -l per
+        -rwSr--r-- 1 gafoli gafoli 21 Nov  5 10:14 per
+    - Can remove SUID using the u-s command: chmod u-s fileName
+        eg:
+        ~ $ ls -l per
+        -rwSr--r-- 1 gafoli gafoli 21 Nov  5 10:14 per
+
+        ~ $ chmod u-s per
+
+        ~ $ ls -l per
+        -rw-r--r-- 1 gafoli gafoli 21 Nov  5 10:14 per
+
+> SGID
+    - Set-Group-ID
+    - Similar to SUID except that, an executable runs with the privileges of the group
+    - You can set SGID bit by passing g+s to the: chmod g+s fileName
+    - Can remove SGID using the g-s command: chmod g-s fileName
+
+> The Sticky Bit
+    - If Sticky Bit is set on a directory, only the user of file/dir, root user can delete the file
+    - Used to delete other users files inside a shared memory
+    - Can be set using command: chmod +t dirName
+
+Linux File Links
+> Inodes
+    - Index Mode
+
+
+> Link Directories
+    - Symlink points to a target file/directory
+
+
+
+
+
+> Linux Hard links
+> Linux Soft links
+> Linux Remove link
