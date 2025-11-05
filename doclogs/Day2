@@ -57,6 +57,15 @@ Git and its basics commands
 > branching
     - git branch
 
+> rebase
+    - adds branch history/commits to a another base branch
+    - git rebase
 
+> merge
+    - git merge targetBranch
 
+> tagging
+> log
+> replace local changes
+> tig - Text-mode interface for git
 
